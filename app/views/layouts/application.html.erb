@@ -17,7 +17,9 @@
     <div class="container">
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="<%students_path%>">Teacher Portal</a>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-brand" %>
+        <%if current_user.present?%>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-brand" %>
+        <%end%> 
       </nav>
       <br>
 

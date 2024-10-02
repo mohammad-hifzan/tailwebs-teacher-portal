@@ -1,0 +1,47 @@
+
+
+
+<div class="card card-container container-fluid" style="width: 58rem;">
+  <div class="card-body">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-signin'}) do |f| %>
+    
+
+    <div class="text-center mb-4">
+      <img class="mb-4" src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Log In</h1>
+    </div>
+
+    <div class="form-label-group">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", id: 'inputEmail', class:'form-control', required: true, style: "width: 626.766px;" %>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="form-label-group">
+      <%= f.password_field :password, autocomplete: "current-password", placeholder:"Password", id: 'inputPassword', class:"form-control", required: true, style: "width: 626.766px;" %>
+    </div>
+
+    <br>
+    <br>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="checkbox mb-3">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+    <% end %>
+
+    <br>
+
+    <div class="actions">
+      <%= f.submit "Log in", class: 'btn btn-lg btn-primary btn-block' %>
+    </div>
+  <% end %>
+
+  <br>
+  <%= render "devise/shared/links" %>
+
+  </div>
+
+</div>

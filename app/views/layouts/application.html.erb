@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TeacherPortal</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="<%students_path%>">Teacher Portal</a>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "navbar-brand" %>
+      </nav>
+      <br>
+
+      <%notice = notice == alert ? nil : notice%>
+      <%= render partial: 'shared/flash_message'%>
+      <%= yield %>
+    </div>
+  </body>
+</html>

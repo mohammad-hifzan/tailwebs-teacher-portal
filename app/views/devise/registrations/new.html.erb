@@ -1,0 +1,56 @@
+
+
+
+
+
+
+<div class="card card-container container-fluid" style="width: 58rem;">
+  <div class="card-body">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="text-center mb-4">
+      <img class="mb-4" src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o=" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
+    </div>
+
+    <div class="form-group">
+      <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder:"User Name", id: 'inputUserName', class:'form-control', required: true, style: "width: 626.766px;" %>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", id: 'inputEmail', class:'form-control', required: true, style: "width: 626.766px;" %>
+    </div>
+
+    <br>
+
+
+    <div class="form-group">
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password", id: 'inputPassword', class:"form-control", required: true, style: "width: 626.766px;" %>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Password", id: 'inputPassword', class:"form-control", required: true, style: "width: 626.766px;" %>
+    </div>
+
+    <br>
+
+    <div class="actions">
+      <%= f.submit "Sign Up", class: 'btn btn-lg btn-primary btn-block' %>
+    </div>
+  <% end %>
+
+  <br>
+  <%= render "devise/shared/links" %>
+
+  </div>
+
+</div>

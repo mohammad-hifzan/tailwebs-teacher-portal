@@ -9,7 +9,7 @@ class StudentsController < ApplicationController
 			name 		= student_params[:name].downcase
 			subject = student_params[:subject].downcase
 			mark 		= student_params[:mark]
-			@student = Student.find_by(name: name, subject: subject)
+			@student = Student.find_by(name: name, subject: subject, user_id: current_user.id)
 			if @student.present? && @student.update(mark: mark)
 				flash[:warning] = 'Student With Same Subject Already Exists Updated The Mark'
 				redirect_to students_path
